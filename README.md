@@ -13,7 +13,7 @@ To use the API, you can send requests to the following server:
 
 ### Request:
 ```bash
-GET http://js960629.ddns.net:1140/test/get
+GET http://js960629.ddns.net:1140/test/api/get
 
 
 
