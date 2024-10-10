@@ -4,41 +4,38 @@ import java.util.Map;
 
 public class UserInfo {
 
-    private Long user_info_id;
-    private String username;
+    private Long user_idx;
+    private String userId;
+    private String userName; // 필드 이름 변경
     private String password;
     private String address;
     private String birthDate;
     private String gender;
     private String occupation;
 
-    // Constructors
-    public UserInfo() {}
-
-    public UserInfo(Map<String, Object> userInfoMap) {
-        this.user_info_id = (Long) userInfoMap.get("user_info_id");
-        this.username = (String) userInfoMap.get("username");
-        this.password = (String) userInfoMap.get("password");
-        this.address = (String) userInfoMap.get("address");
-        this.birthDate = (String) userInfoMap.get("birthDate");
-        this.gender = (String) userInfoMap.get("gender");
-        this.occupation = (String) userInfoMap.get("occupation");
+    // Getters and Setters
+    public Long getUser_idx() {
+        return user_idx;
     }
 
-    public Long getUser_info_id() {
-        return user_info_id;
+    public void setUser_idx(Long user_idx) {
+        this.user_idx = user_idx;
     }
 
-    public void setUser_info_id(Long user_info_id) {
-        this.user_info_id = user_info_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public String getUsername() {
-        return username;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getUserName() { // 필드 이름 변경에 따라 수정
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -79,5 +76,19 @@ public class UserInfo {
 
     public void setOccupation(String occupation) {
         this.occupation = occupation;
+    }
+
+    // Constructors
+    public UserInfo() {}
+
+    public UserInfo(Map<String, Object> userInfoMap) {
+        this.user_idx = (Long) userInfoMap.get("user_idx");
+        this.userId = (String) userInfoMap.get("userId");
+        this.userName = (String) userInfoMap.get("userName");
+        this.password = (String) userInfoMap.get("password");
+        this.address = (String) userInfoMap.get("address");
+        this.birthDate = (String) userInfoMap.get("birthDate");
+        this.gender = (String) userInfoMap.get("gender");
+        this.occupation = (String) userInfoMap.get("occupation");
     }
 }

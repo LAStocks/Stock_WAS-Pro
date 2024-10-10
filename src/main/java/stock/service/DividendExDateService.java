@@ -3,7 +3,6 @@ package stock.service;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,12 +13,6 @@ import org.jsoup.select.Elements;
 
 @Service
 public class DividendExDateService {
-
-    private final WebClient webClient;
-
-    public DividendExDateService(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("https://kr.investing.com").build();
-    }
 
     public List<String> scrapeDividendCalendar() {
         List<String> dividendData = new ArrayList<>();

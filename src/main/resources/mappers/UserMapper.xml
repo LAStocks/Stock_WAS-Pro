@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stock.mapper.UserInfoMapper">
+
+    <!-- 사용자의 ID로 회원 정보 조회 -->
+    <select id="findByUserIdCnt" resultType="int" parameterType="java.lang.String" >
+        SELECT count(*)
+        FROM userinfo
+        WHERE user_id = #{userId}
+    </select>
+
+    <!-- 회원 정보 추가 -->
+<!--    <insert id="save" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="user_idx">-->
+<!--        INSERT INTO userinfo (user_id, password, user_name, address, birth_date, gender, occupation, registration_date)-->
+<!--        VALUES (#{userId}, #{password}, #{userName}, #{address}, #{birthDate}, #{gender}, #{occupation},-->
+<!--                #{registrationDate})-->
+<!--    </insert>-->
+
+<!--    <select id="findByUserId" resultType="stock.model.UserInfo" parameterType="string" >-->
+<!--        SELECT *-->
+<!--        FROM userinfo-->
+<!--        WHERE user_id = #{userId}-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; 회원 정보 수정 &ndash;&gt;-->
+<!--    <update id="update" parameterType="stock.model.UserInfo">-->
+<!--        UPDATE userinfo-->
+<!--        SET password   = #{password},-->
+<!--            user_name  = #{userName},-->
+<!--            address    = #{address},-->
+<!--            birth_date = #{birthDate},-->
+<!--            gender     = #{gender},-->
+<!--            occupation = #{occupation}-->
+<!--        WHERE user_id = #{userId}-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; 회원 정보 삭제 &ndash;&gt;-->
+<!--    <delete id="deleteByUserId" parameterType="string">-->
+<!--        DELETE-->
+<!--        FROM userinfo-->
+<!--        WHERE user_id = #{userId}-->
+<!--    </delete>-->
+
+</mapper>
