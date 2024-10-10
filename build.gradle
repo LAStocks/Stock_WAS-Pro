@@ -31,6 +31,9 @@ dependencies {
 	implementation 'org.jsoup:jsoup:1.14.3'
 
 
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
 	//DB
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
