@@ -29,14 +29,16 @@ public class AuthController {
 
     // 로그인 후 토큰 발급
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
-        // 실제 로그인 로직 추가 (예: 데이터베이스에서 사용자 검증)
-        if ("user".equals(username) && "password".equals(password)) {
-            // 토큰 생성
-            return tokenUtil.generateToken(username);
-        } else {
-            return "로그인 실패";
+    @ApiOperation(value = "User Login", notes = "사용자 이름과 비밀번호를 사용하여 로그인합니다.")
+    public ResponseEntity<String> login(@RequestBody Map<String, String> loginRequest) {
+        String username = loginRequest.get("username");
+        String password = loginRequest.get("password");
+
+        UserInfo userInfo = userInfoMapper.findByUsername(username);
+        if (userInfo == null || !bCryptPasswordEncoder.matches(password, userInfo.getPassword())) {
+            return new ResponseEntity<>("Invalid username or password.", HttpStatus.UNAUTHORIZED);
         }
+        return new ResponseEntity<>("Login successful.", HttpStatus.OK);
     }
 
     @PostMapping("/signup")
