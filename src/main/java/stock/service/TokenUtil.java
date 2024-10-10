@@ -6,10 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-//@Component
+@Component
 public class TokenUtil {
 
-    // In-memory token store (you can replace this with Redis or database in production)
     private Map<String, String> tokenStore = new HashMap<>();
 
     // 토큰 생성
